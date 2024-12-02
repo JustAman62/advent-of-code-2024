@@ -18,4 +18,5 @@ defmodule AdventOfCode.Day01Test do
 
     assert result
   end
+  
 end
