@@ -6,7 +6,6 @@ defmodule AdventOfCode.Day01 do
       |> String.split("\n", trim: true)
       |> Enum.map(fn line -> line |> String.split(" ", trim: true) |> List.to_tuple() end)
       |> Enum.unzip()
-      |> IO.inspect()
 
     left = left |> to_sorted_ints()
     right = right |> to_sorted_ints()
@@ -25,7 +24,6 @@ defmodule AdventOfCode.Day01 do
       |> String.split("\n", trim: true)
       |> Enum.map(fn line -> line |> String.split(" ", trim: true) |> List.to_tuple() end)
       |> Enum.unzip()
-      |> IO.inspect()
 
     left = left |> to_sorted_ints()
 
@@ -35,7 +33,6 @@ defmodule AdventOfCode.Day01 do
       |> Enum.group_by(& &1)
       |> Enum.map(fn x -> {Kernel.elem(x, 0), Kernel.elem(x, 1) |> length()} end)
       |> Map.new()
-      |> IO.inspect()
 
     Enum.reduce(left, 0, fn left, acc -> acc + (left * Map.get(right, left, 0)) end)
   end
