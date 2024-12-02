@@ -50,10 +50,10 @@ defmodule AdventOfCode.Input do
   defp from_cache!(day, year), do: File.read!(cache_path(day, year))
 
   defp download!(day, year) do
-    {:ok, {{'HTTP/1.1', 200, 'OK'}, _, input}} =
+    {:ok, {{"HTTP/1.1", 200, "OK"}, _, input}} =
       :httpc.request(
         :get,
-        {'https://adventofcode.com/#{year}/day/#{day}/input', headers()},
+        {"https://adventofcode.com/#{year}/day/#{day}/input", headers()},
         [],
         []
       )
